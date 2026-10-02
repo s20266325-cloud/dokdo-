@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 땅, 독도를 만나다</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;color:#123b5d;background:#f4fbff}
+nav{position:fixed;top:12px;left:3%;right:3%;z-index:20;background:rgba(255,255,255,.94);border:2px solid #d9f0ff;border-radius:22px;padding:10px;display:flex;justify-content:center;gap:6px;box-shadow:0 8px 25px #075f8320;backdrop-filter:blur(10px)}
+nav a{color:#123b5d;text-decoration:none;font-weight:800;padding:9px 13px;border-radius:15px;white-space:nowrap}nav a:hover{background:#dff5ff}
+.hero{min-height:720px;padding:140px 20px 80px;position:relative;overflow:hidden;text-align:center;background:linear-gradient(#69cfff 0%,#bcecff 48%,#eafaff 100%)}
+.sun{position:absolute;width:110px;height:110px;border-radius:50%;background:#ffe36e;right:10%;top:130px;box-shadow:0 0 45px #fff2a8}
+.cloud{position:absolute;background:#fff;border-radius:999px;width:150px;height:38px;opacity:.85}.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}.cloud:before{width:65px;height:65px;left:25px;top:-35px}.cloud:after{width:80px;height:80px;right:20px;top:-45px}.c1{left:4%;top:180px}.c2{right:4%;top:300px;transform:scale(.75)}
+.hero-inner{position:relative;z-index:3;max-width:1000px;margin:auto}
+.badge{display:inline-block;background:#fff;padding:9px 17px;border-radius:999px;color:#087da8;font-weight:900;box-shadow:0 5px 15px #087da822}
+h1{font-size:clamp(45px,8vw,88px);line-height:1.05;margin:18px 0 12px;color:#075f83;text-shadow:4px 5px 0 #fff}
+.hero p{font-size:19px;line-height:1.7;font-weight:700}
+.cta{display:inline-block;margin:20px 0 25px;background:#ffcf3d;color:#17324d;text-decoration:none;padding:15px 27px;border-radius:999px;font-size:18px;font-weight:900;box-shadow:0 7px 0 #d9a900;transition:.15s}.cta:active{transform:translateY(5px);box-shadow:0 2px 0 #d9a900}
+.islands{height:220px;position:relative;margin:0 auto;max-width:850px}.island{position:absolute;bottom:15px;width:250px;height:135px;background:linear-gradient(145deg,#6eb84d,#287b52);border-radius:48% 52% 38% 62%/55% 48% 52% 45%;box-shadow:inset -20px -10px 0 #205c45,0 15px 30px #075f8340}.island:before{content:"";position:absolute;background:#8ed65a;width:120px;height:45px;left:55px;top:20px;border-radius:50%}.left{left:7%;transform:rotate(-8deg)}.right{right:7%;transform:scale(.82) rotate(7deg)}
+.sea{position:absolute;bottom:-80px;left:-5%;right:-5%;height:220px;background:#078fc7;border-radius:50% 50% 0 0/25% 25% 0 0;box-shadow:inset 0 20px 0 #42c8ed}.fish{position:absolute;font-size:42px;animation:swim 4s infinite ease-in-out}.f1{left:25%;bottom:45px}.f2{right:28%;bottom:70px;animation-delay:1s}@keyframes swim{50%{transform:translateY(-12px) translateX(20px)}}
+.cards{position:relative;z-index:5;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;max-width:1150px;margin:-20px auto 0;padding:0 20px}.card{background:#fff;border-radius:22px;padding:22px 12px;box-shadow:0 10px 25px #075f8322;border:2px solid #e0f4ff;transition:.2s}.card:hover{transform:translateY(-7px)}.icon{font-size:38px}.card h3{margin:8px 0 5px;font-size:17px}.card p{margin:0;font-size:13px;color:#537084}
+section{max-width:1100px;margin:auto;padding:90px 22px}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:34px;color:#075f83;margin:0 0 8px}.section-title p{margin:0;color:#597587}.info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.box{background:white;padding:25px;border-radius:22px;box-shadow:0 7px 20px #075f8315;border:1px solid #d9edf7}.box h3{margin-top:0;color:#087da8}.timeline{display:grid;gap:14px}.timeline .box{border-left:7px solid #35b9e9}
+.route{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;align-items:center}.step{background:#fff;border:3px solid #9ddff6;border-radius:20px;padding:18px;font-weight:800}.arrow{font-size:25px;color:#087da8}
+.quiz{max-width:700px;margin:auto;background:#fff;padding:30px;border-radius:25px;box-shadow:0 10px 30px #075f8320;text-align:center}.answers{display:grid;gap:10px;margin-top:20px}.answers button{border:0;border-radius:14px;padding:14px;background:#e7f8ff;font-size:16px;font-weight:800;cursor:pointer}.answers button:hover{background:#c8efff}.result{margin-top:15px;font-weight:900;min-height:24px}
+footer{text-align:center;background:#075f83;color:white;padding:35px 20px}.small{opacity:.75;font-size:12px}
+@media(max-width:800px){nav{justify-content:flex-start;overflow-x:auto}.cards{grid-template-columns:repeat(2,1fr)}.info{grid-template-columns:1fr}.hero{min-height:760px}.islands{transform:scale(.8)}.sun{right:2%;top:120px}}
+@media(max-width:480px){nav a{font-size:12px;padding:8px 10px}.cards{grid-template-columns:1fr 1fr}.card{padding:15px 8px}.card h3{font-size:15px}.hero p{font-size:16px}.islands{transform:scale(.62);margin-top:-10px}}
+</style>
+</head>
+<body>
+<nav>
+<a href="#home">🏠 홈</a><a href="#about">📍 독도</a><a href="#meaning">🌏 의미</a><a href="#history">📜 역사</a><a href="#route">🛥️ 탐방</a><a href="#treasure">💎 보물</a><a href="#quiz">🎮 퀴즈</a>
+</nav>
+
+<header class="hero" id="home">
+<div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+<div class="hero-inner">
+<span class="badge">🌊 독도 탐험 프로젝트</span>
+<h1>우리 땅!<br>독도를 만나다</h1>
+<p>작지만 소중한 섬, 독도!<br>독도의 위치와 역사, 자연을 재미있게 탐험해 보자.</p>
+<a class="cta" href="#about">탐험 시작하기 →</a>
+<div class="islands"><div class="island left"></div><div class="island right"></div><div class="fish f1">🐬</div><div class="fish f2">🐟</div></div>
+</div><div class="sea"></div>
+</header>
+
+<div class="cards">
+<div class="card"><div class="icon">📍</div><h3>독도 알아보기</h3><p>위치와 동도·서도</p></div>
+<div class="card"><div class="icon">🌏</div><h3>지정학적 의미</h3><p>왜 중요한 섬일까?</p></div>
+<div class="card"><div class="icon">📜</div><h3>역사</h3><p>과거부터 현재까지</p></div>
+<div class="card"><div class="icon">🛥️</div><h3>탐방</h3><p>제트스키 가상 코스</p></div>
+<div class="card"><div class="icon">🐟</div><h3>보물</h3><p>독도의 해양 생태계</p></div>
+<div class="card"><div class="icon">🎮</div><h3>퀴즈</h3><p>지금 바로 도전!</p></div>
+</div>
+
+<section id="about"><div class="section-title"><h2>📍 독도 알아보기</h2><p>독도는 동해에 있는 섬입니다.</p></div><div class="info"><div class="box"><h3>🏝️ 동도와 서도</h3><p>독도는 크게 동도와 서도로 이루어져 있어요.</p></div><div class="box"><h3>🌊 바다 위의 섬</h3><p>독도 주변에는 다양한 해양 생물이 살아가요.</p></div><div class="box"><h3>🧭 위치</h3><p>울릉도에서 약 87.4km 떨어져 있습니다.</p></div></div></section>
+<section id="meaning"><div class="section-title"><h2>🌏 지정학적 의미</h2><p>초등학생도 이해하기 쉽게!</p></div><div class="info"><div class="box"><h3>🗺️ 위치가 중요해요</h3><p>독도는 동해에 있어 주변 바다와 해양 활동을 이해하는 데 중요한 위치에 있습니다.</p></div><div class="box"><h3>🐠 바다와 자원</h3><p>주변 해역에는 다양한 생물이 살아가며 해양 환경을 연구할 수 있습니다.</p></div><div class="box"><h3>📚 역사와 영토</h3><p>독도는 역사 자료와 영토에 관한 학습에서 자주 다루어지는 섬입니다.</p></div></div></section>
+<section id="history"><div class="section-title"><h2>📜 독도 역사 여행</h2></div><div class="timeline"><div class="box"><h3>1900년</h3><p>대한제국 칙령 제41호에서 석도를 울도군의 관할 구역으로 규정했습니다.</p></div><div class="box"><h3>오늘날</h3><p>독도는 우리나라의 중요한 섬으로 관리되고 있습니다.</p></div></div></section>
+<section id="route"><div class="section-title"><h2>🛥️ 독도 탐방 코스</h2><p>※ 학교 과제를 위한 가상 탐방 설정입니다.</p></div><div class="route"><div class="step">🚤 울릉도</div><div class="arrow">→</div><div class="step">🛥️ 제트스키 출발</div><div class="arrow">→</div><div class="step">🏝️ 독도 도착</div><div class="arrow">→</div><div class="step">👀 동도 관찰</div><div class="arrow">→</div><div class="step">🔭 전망 감상</div><div class="arrow">→</div><div class="step">🏔️ 서도 관찰</div></div></section>
+<section id="treasure"><div class="section-title"><h2>💎 독도의 보물</h2><p>우리가 고른 독도의 보물은 바로 해양 생태계!</p></div><div class="info"><div class="box"><h3>🐟 다양한 생물</h3><p>독도 주변 바다에는 여러 종류의 해양 생물이 살아갑니다.</p></div><div class="box"><h3>🦭 소중한 자연</h3><p>섬과 바다의 자연환경을 보호하는 것이 중요합니다.</p></div><div class="box"><h3>🔬 연구 가치</h3><p>독도의 자연은 해양 생태를 알아보는 데 의미가 있습니다.</p></div></div></section>
+<section id="quiz"><div class="section-title"><h2>🎮 독도 퀴즈</h2><p>배운 내용을 테스트해 보자!</p></div><div class="quiz"><div><b>Q. 독도의 주요 섬 두 곳은 무엇일까요?</b></div><div class="answers"><button onclick="check(true)">① 동도와 서도</button><button onclick="check(false)">② 제주도와 울릉도</button><button onclick="check(false)">③ 남도와 북도</button></div><div class="result" id="result"></div></div></section>
+<footer><b>🌊 우리 땅, 독도를 만나다</b><br>독도의 역사와 자연을 알아보는 학교 프로젝트 웹사이트<p class="small">※ 학교 과제용 예시 웹사이트</p></footer>
+<script>function check(ok){const r=document.getElementById('result');r.textContent=ok?'🎉 정답! 동도와 서도입니다!':'❌ 아쉽다! 다시 생각해 보세요.';r.style.color=ok?'#087da8':'#d15b5b'}</script>
+</body>
+</html>
